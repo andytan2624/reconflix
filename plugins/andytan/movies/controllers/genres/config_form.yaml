@@ -1,0 +1,10 @@
+name: Genres
+form: $/andytan/movies/models/genre/fields.yaml
+modelClass: Andytan\Movies\Models\Genre
+defaultRedirect: andytan/movies/genres
+create:
+    redirect: 'andytan/movies/genres/update/:id'
+    redirectClose: andytan/movies/genres
+update:
+    redirect: andytan/movies/genres
+    redirectClose: andytan/movies/genres

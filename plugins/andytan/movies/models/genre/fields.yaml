@@ -1,0 +1,14 @@
+fields:
+    genre_title:
+        label: Title
+        oc.commentPosition: ''
+        span: left
+        type: text
+    slug:
+        label: Slug
+        oc.commentPosition: ''
+        span: right
+        preset:
+            field: genre_title
+            type: slug
+        type: text

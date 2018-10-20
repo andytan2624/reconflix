@@ -1,0 +1,15 @@
+genres:
+  label: Genre
+  view:
+    list: $/andytan/movies/models/genre/columns.yaml
+    toolbarButtons: add|remove
+  manage:
+    form: $/andytan/movies/models/genre/fields.yaml
+    showCheckboxes: true
+actors:
+  label: Actors
+  view:
+    list: $/andytan/movies/models/actor/columns.yaml
+  manage:
+    form: $/andytan/movies/models/actor/fields.yaml
+    showSearch: true

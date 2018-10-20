@@ -1,0 +1,24 @@
+columns:
+    name:
+        label: Name
+        type: text
+        searchable: true
+        invisible: false
+        sortable: true
+    year:
+        label: Year
+        type: number
+        invisible: false
+        sortable: true
+    genres:
+        label: Genres
+        type: text
+        searchable: true
+        select: genre_title
+        relation: genres
+    created_at:
+        label: 'Created at'
+        type: datetime
+    published:
+        label: Published
+        type: switch

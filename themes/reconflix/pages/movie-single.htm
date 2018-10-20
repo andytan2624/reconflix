@@ -1,0 +1,56 @@
+title = "Movie single"
+url = "/movie/:slug"
+layout = "default"
+is_hidden = 0
+
+==
+
+
+<?php
+    use Andytan\Movies\Models\Movie;
+    function onStart() {
+        $this['movie'] = Movie::where('slug', '=', $this->param('slug'))->first();
+    }
+
+?>
+
+==
+
+
+{% if movie %}
+    <h1>{{ movie.name }} </h1>
+
+    <img src="{{ movie.poster.thumb(200,auto) }}" />
+    
+    <h4>{{ movie.year }} </h4>
+    
+    <h3> Description </h3>
+    {{ movie.description|raw }}
+
+    <h3>Actors</h3>
+
+    <ul>
+        {% for actor in movie.actors %}
+        <li> {{ actor.name }} {{ actor.lastname }} </li>
+        {% endfor %}
+    </ul>
+
+    <h3>Gallery</h3>
+    <ul class="gallery clearfix">
+        {% for image in movie.movie_gallery %}
+        <li>
+            <a href="{{ image.path }}">
+            <img src="{{ image.thumb(80,80, {'mode':'crop'}) }}"/>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <h3>Genres</h3>
+    {% for genre in movie.genres %}
+        <a href="/reconflix/genres/{{ genre.genre_title }}">{{ genre.genre_title }}</a> <br/>
+    {% endfor %}
+
+{% else %}
+    {{ notFoundMessage }}
+{% endif %}

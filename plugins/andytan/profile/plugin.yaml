@@ -1,0 +1,6 @@
+plugin:
+    name: 'andytan.profile::lang.plugin.name'
+    description: 'andytan.profile::lang.plugin.description'
+    author: andytan
+    icon: oc-icon-coffee
+    homepage: ''

@@ -1,0 +1,10 @@
+name: Movies
+form: $/andytan/movies/models/movie/fields.yaml
+modelClass: Andytan\Movies\Models\Movie
+defaultRedirect: andytan/movies/movies
+create:
+    redirect: 'andytan/movies/movies/update/:id'
+    redirectClose: andytan/movies/movies
+update:
+    redirect: andytan/movies/movies
+    redirectClose: andytan/movies/movies

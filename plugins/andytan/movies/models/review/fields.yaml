@@ -1,0 +1,60 @@
+fields:
+    title:
+        label: Title
+        oc.commentPosition: ''
+        span: full
+        type: text
+    excerpt:
+        label: Excerpt
+        size: ''
+        oc.commentPosition: ''
+        span: full
+        type: textarea
+    content_html:
+        label: 'Actual Review'
+        size: ''
+        oc.commentPosition: ''
+        span: full
+        type: richeditor
+    star_rating:
+        label: 'Star Rating'
+        oc.commentPosition: ''
+        options:
+            1: '0'
+            2: '0.5'
+            3: '1'
+            4: '1.5'
+            5: '2'
+            6: '2.5'
+            7: '3'
+            8: '3.5'
+            9: '4'
+        emptyOption: '0'
+        span: auto
+        type: dropdown
+    rating:
+        label: Rating
+        oc.commentPosition: ''
+        span: auto
+        type: number
+    movie:
+        label: Movie
+        oc.commentPosition: ''
+        nameFrom: name
+        descriptionFrom: 'Movies name'
+        span: auto
+        type: recordfinder
+        list: $/andytan/movies/models/movie/columns.yaml
+        prompt: Click the %s button to find a movie
+        nameFrom: name
+    published:
+        label: Published
+        span: right
+        type: checkbox
+    published_at:
+        label: 'Published At'
+        span: auto
+        oc.commentPosition: ''
+        mode: datetime
+        hidden: 1
+        type: datepicker

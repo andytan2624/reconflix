@@ -1,0 +1,40 @@
+title = "Movies"
+url = "/movies/:page?"
+layout = "default"
+is_hidden = 0
+
+==
+
+<?php
+    use Andytan\Movies\Models\Movie;
+    function onStart() {
+        $this['movies'] = Movie::orderBy('year', 'desc')->paginate(20);
+        $this['name'] = Input::get('name');
+        if ($this['name']) {
+            $this['movies'] = Movie::where('name', 'like', '%'.$this['name'].'%')->get();
+        }
+    }
+
+?>
+
+==
+
+
+<ul class="record-list">
+    {% for movie in movies %}
+        <li>
+            <h3>
+                <a href="/reconflix/movie/{{ movie.slug }}">
+                {{ movie.name }} - {{ movie.year }}
+                </a>
+            </h3>
+            {{ html_limit(movie.description, 150)|raw }}
+        </li>
+    {% else %}
+        <li class="no-data">No movies found</li>
+    {% endfor %}
+</ul>
+
+<div>
+    {{ movies.render | raw }}
+</div>

@@ -1,0 +1,23 @@
+fields:
+    name:
+        label: Name
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    lastname:
+        label: 'Last Name'
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    actorimage:
+        label: 'Actor image'
+        span: auto
+        oc.commentPosition: ''
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        imageWidth: '100'
+        imageHeight: '100'
+        type: fileupload

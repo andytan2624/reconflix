@@ -1,0 +1,25 @@
+columns:
+    movie:
+        label: Movie
+        type: text
+        searchable: true
+        sortable: true
+        select: name
+        relation: movie
+    title:
+        label: 'Review Title'
+        type: text
+        searchable: true
+        sortable: true
+    slug:
+        label: 'Review Slug'
+        type: text
+    star_rating:
+        label: 'Star Rating'
+        type: number
+    rating:
+        label: Rating
+        type: number
+    published:
+        label: Published
+        type: switch

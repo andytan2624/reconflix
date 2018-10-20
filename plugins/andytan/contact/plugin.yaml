@@ -1,0 +1,6 @@
+plugin:
+    name: 'andytan.contact::lang.plugin.name'
+    description: 'andytan.contact::lang.plugin.description'
+    author: andytan
+    icon: oc-icon-adjust
+    homepage: ''

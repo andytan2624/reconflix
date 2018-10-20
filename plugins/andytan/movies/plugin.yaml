@@ -1,0 +1,37 @@
+plugin:
+    name: 'andytan.movies::lang.plugin.name'
+    description: 'andytan.movies::lang.plugin.description'
+    author: andytan
+    icon: oc-icon-video-camera
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Movies
+        url: andytan/movies/movies
+        icon: icon-video-camera
+        permissions: {  }
+        sideMenu:
+            side-menu-item:
+                label: Genres
+                url: andytan/movies/genres
+                icon: icon-tag
+                permissions:
+                    - manage_genres
+            side-menu-item2:
+                label: Actors
+                url: andytan/movies/actors
+                icon: icon-user
+    main-menu-item2:
+        label: Reviews
+        url: andytan/movies/reviews
+        icon: icon-book
+permissions:
+    maange_movies:
+        tab: Movies
+        label: 'Manage movies'
+    manage_genres:
+        tab: Movies
+        label: 'Manage genres'
+    delete_movies:
+        tab: 'Movies '
+        label: 'Delete movies'

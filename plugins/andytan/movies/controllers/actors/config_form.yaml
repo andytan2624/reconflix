@@ -1,0 +1,10 @@
+name: Actors
+form: $/andytan/movies/models/actor/fields.yaml
+modelClass: Andytan\Movies\Models\Actor
+defaultRedirect: andytan/movies/actors
+create:
+    redirect: 'andytan/movies/actors/update/:id'
+    redirectClose: andytan/movies/actors
+update:
+    redirect: andytan/movies/actors
+    redirectClose: andytan/movies/actors

@@ -1,0 +1,10 @@
+name: Reviews
+form: $/andytan/movies/models/review/fields.yaml
+modelClass: Andytan\Movies\Models\Review
+defaultRedirect: andytan/movies/reviews
+create:
+    redirect: 'andytan/movies/reviews/update/:id'
+    redirectClose: andytan/movies/reviews
+update:
+    redirect: andytan/movies/reviews
+    redirectClose: andytan/movies/reviews

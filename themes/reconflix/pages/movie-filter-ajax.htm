@@ -1,0 +1,100 @@
+title = "Filter Movies"
+url = "/ajax-filter"
+layout = "default"
+is_hidden = 0
+
+==
+
+<?php
+    use Andytan\Movies\Models\Movie;
+    use Andytan\Movies\Models\Genre;
+
+    function onStart() {
+        $this->prepareVars();
+        $this->prepareYears();
+    }
+
+    function onFilterMovies() { $this->prepareVars(); }
+
+
+    function prepareVars () {
+        $options = post('Filter', []);
+
+        $this['movies'] = Movie::listFrontEnd($options);
+
+        $this['genres'] = Genre::all();
+
+        $this['sortOptions'] = Movie::$allowedSortingOptions;
+
+
+        $this['pages'] = $this['movies']->lastPage();
+        $this['page'] = $this['movies']->currentPage();
+    }
+
+    function prepareYears() {
+        $movies = Movie::all();
+        $years = [];
+
+        foreach ($movies as $movie) {
+        $years[] = $movie->year;
+        }
+
+        $years = array_unique($years);
+
+        array_sort($years);
+
+        $this['years'] = $years;
+    }
+?>
+
+==
+<h2 class="ui header"> Filter Movies </h2>
+
+<div class="ui grid">
+    <div class="five wide column">
+        {{ form_ajax('onFilterMovies', { update: { 'movies/movies': '#partialMovies', 'movies/paginate' : '#partialPaginate' } }) }}
+        <div id="MoviesFilter" class="movies-filter ui form">
+            <div class="ui segment vertical">
+                <label>Genres</label>
+                {% for genre in genres %}
+                <div class="field">
+                    <div class="ui checkbox">
+                        <input type="checkbox" name="Filter[genres][]" value="{{ genre.id }}" />
+                        <label>{{genre.genre_title}}</label>
+                    </div>
+                </div>
+                {% endfor %}
+
+                <div class="field">
+                    <label>Year</label>
+                    <select class="ui fluid dropdown moviedropdown" name="Filter[year]" id="yeardropdown">
+                        <option value="">Select Year</option>
+                        {% for year in years|sort %}
+                        <option value="{{year}}">{{ year }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Sorting</label>
+                    <select class="ui fluid dropdown moviedropdown" name="Filter[sort]">
+                        {% for code, option in sortOptions %}
+                        <option value="{{code}}">{{ option }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="field" id="partialPaginate">
+                    {% partial 'movies/paginate' %}
+                </div>
+
+            </div>
+        </div>
+        {{ form_close() }}    </div>
+    <div class="eleven wide column">
+        <div id="partialMovies">
+            {% partial 'movies/movies' %}
+        </div>
+    </div>
+</div>
+

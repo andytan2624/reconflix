@@ -1,0 +1,8 @@
+movies:
+  label: Movie
+  view:
+    list: $/andytan/movies/models/movie/columns.yaml
+    toolbarButtons: add|remove
+  manage:
+    form: $/andytan/movies/models/movie.fields.yaml
+    showCheckboxes: true
