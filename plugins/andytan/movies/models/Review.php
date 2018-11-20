@@ -8,35 +8,35 @@ use Str;
  */
 class Review extends Model
 {
-    use \October\Rain\Database\Traits\Validation;
-    
-    use \October\Rain\Database\Traits\SoftDelete;
+  use \October\Rain\Database\Traits\Validation;
 
-    protected $dates = ['deleted_at'];
+  use \October\Rain\Database\Traits\SoftDelete;
 
-    /*
-     * Validation
-     */
-    public $rules = [
-    ];
+  public $rules = [
+  ];
 
-    /**
-     * @var string The database table used by the model.
-     */
-    public $table = 'andytan_movies_reviews';
+  /*
+   * Validation
+   */
+  /**
+   * @var string The database table used by the model.
+   */
+  public $table = 'andytan_movies_reviews';
+  public $belongsTo = [
+    'movie' => [
+      'Andytan\Movies\Models\Movie',
+      'andytan_movies_'
+    ]
+  ];
+  protected $dates = ['deleted_at'];
 
-    public $belongsTo = [
-        'movie' => [
-            'Andytan\Movies\Models\Movie',
-            'andytan_movies_'
-        ]
-    ];
-
-    public function beforeSave()
-    {
-        // Generate a URL slug for this model
-        if (empty($this->slug)) {
-            $this->slug = Str::slug($this->title);
-        }
+  public function beforeSave()
+  {
+    // Generate a URL slug for this model
+    if (empty($this->slug)) {
+      $this->slug = Str::slug($this->title);
     }
+  }
+
+
 }

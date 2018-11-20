@@ -32,29 +32,30 @@ class Plugin extends PluginBase
         \Event::listen('offline.sitesearch.query', function ($query) {
 
             // Search your plugin's contents
-            $items = Models\Movie::where('name', 'like', "%${query}%")
-                ->orWhere('description', 'like', "%${query}%")
+            $reviews = Models\Review::where('title', 'like', "%${query}%")
+                ->orWhere('excerpt', 'like', "%${query}%")
+                ->orWhere('content_html', 'like', "%${query}%")
                 ->get();
 
             // Now build a results array
-            $results = $items->map(function ($item) use ($query) {
+            $results = $reviews->map(function ($review) use ($query) {
 
                 // If the query is found in the title, set a relevance of 2
-                $relevance = mb_stripos($item->title, $query) !== false ? 2 : 1;
+                $relevance = mb_stripos($review->title, $query) !== false ? 2 : 1;
 
-                if ($item->poster) {
+                if ($review->movie->poster) {
                     return [
-                        'title'     => $item->name,
-                        'text'      => $item->description,
-                        'url'       => '/movies/movie/' . $item->slug,
-                        'thumb'     => $item->poster->first(),
+                        'title'     => $review->title,
+                        'text'      => $review->excerpt,
+                        'url'       => '/review/' . $review->slug,
+                        'thumb'     => $review->movie->poster->first(),
                         'relevance' => $relevance,
                     ];
                 } else {
                     return [
-                        'title'     => $item->name,
-                        'text'      => $item->description,
-                        'url'       => '/movies/movie/' . $item->slug,
+                        'title'     => $review->title,
+                        'text'      => $review->excerpt,
+                        'url'       => '/review/' . $review->slug,
                         'relevance' => $relevance,
                     ];
                 }
@@ -62,7 +63,7 @@ class Plugin extends PluginBase
             });
 
             return [
-                'provider' => 'Movie', // The badge to display for this result
+//                'provider' => '', // The badge to display for this result
                 'results'  => $results,
             ];
         });

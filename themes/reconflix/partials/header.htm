@@ -1,24 +1,14 @@
-<header class="main-header">
-    <div class="container clearfix">
-        <h1>Reconflix Movies</h1>
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">The Reel Gentleman</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <nav class="main-nav">
-            <ul>
-                <li class="{% if this.page.id == 'homepage' %} active {% endif %}"><a href="{{ 'homepage'|page}}">Home</a></li>
-                <li class="{% if this.page.id == 'movies' %} active {% endif %}"><a href="{{ 'movies'|page}}">Movies</a></li>
-                <li class="{% if this.page.id == 'add-actors' %} active {% endif %}"><a href="{{ 'add-actors'|page}}">Add actors</a></li>
-                <li class="{% if this.page.id == 'login' %} active {% endif %}"><a href="{{ 'login'|page}}">
-                    {% if not user %}
-                        Login
-                    {% else %}
-                        My Profile
-                    {% endif %}
-                </a></li>
-                {% if user %}
-                <li><a data-request="onLogout" data-request-data="redirect: '/'">Sign Out</a></li>
-                {% endif %}
-
-            </ul>
-        </nav>
+    <div class="collapse navbar-collapse" id="navbarsExample02">
+        <ul class="navbar-nav mr-auto">
+        </ul>
+        <form action="{{ 'search' | page }}" method="get" class="form-inline my-2 my-md-0">
+            <input class="form-control form-control-lg" name="q" placeholder="Search" autocomplete="off" type="text">
+        </form>
     </div>
-</header>
+</nav>

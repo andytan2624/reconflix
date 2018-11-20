@@ -1,0 +1,14 @@
+{% set results = __SELF__.results %}
+
+<div class="container py-3">
+    {% for result in results %}
+    {# Display all results #}
+    {% partial __SELF__ ~ '::searchresult.htm' result = result %}
+    {% else %}
+    {# No results found #}
+    {% partial __SELF__ ~ '::no-results.htm' %}
+    {% endfor %}
+</div>
+
+
+{% partial __SELF__ ~ '::pagination.htm' results = results %}

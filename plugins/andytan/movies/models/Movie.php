@@ -26,6 +26,10 @@ class Movie extends Model
 
     /* Relations */
 
+    public $hasOne = [
+      'review' => 'Andytan\Movies\Models\Review',
+    ];
+
     public $belongsToMany = [
         'genres' => [
             'Andytan\Movies\Models\Genre',
