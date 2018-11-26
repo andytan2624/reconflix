@@ -1,0 +1,17 @@
+<div class="card">
+    <div class="row">
+        <div class="col-md-4">
+            {% if result.thumb %}
+                {% partial __SELF__ ~ '::thumbnail' result = result %}
+            {% endif %}
+        </div>
+        <div class="col-md-8 px-3">
+            <div class="ss-result__content">
+                {% partial __SELF__ ~ '::content' result = result %}
+            </div>
+        </div>
+        <hr/>
+    </div>
+</div>
+
+

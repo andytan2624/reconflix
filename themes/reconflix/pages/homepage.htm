@@ -12,38 +12,57 @@ sortOrder = "name desc"
 ==
 
 <?php
-    use Andytan\Movies\Models\Movie;
+    use Andytan\Movies\Models\Review;
     function onStart() {
-        $this['movies'] = Movie::take(4)->get();
-}
+        $this['reviews'] = Review::latest()->take(10)->get();
+    }
 
 ?>
 
 ==
-<form action="{{ 'search' | page }}" method="get">
-    <input name="q" type="text" placeholder="What are you looking for?" autocomplete="off">
-    <button type="submit">Search</button>
-</form>
 
 
-<ul class="record-list">
-    {% for movie in movies %}
-    <li>
-        <h3>
-            <a href="/reconflix/movie/{{ movie.slug }}">
-                {{ movie.name }} - {{ movie.year }}
-            </a>
-        </h3>
-        {{ html_limit(movie.description, 150)|raw }}
-    </li>
-    {% else %}
-    <li class="no-data">No movies found</li>
-    {% endfor %}
-</ul>
+<main role="main">
 
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">Latest Reviews</h1>
+        </div>
+    </section>
 
-<h1>This is our homepage</h1>
+    <div class="album py-5 bg-light">
+        <div class="container">
 
-This is the lorem ipseum
+            <div class="row">
+                {% for review in reviews %}
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <img class="card-img-top" alt="" style="height: 225px; width: 100%; display: block;" src="{{ review.movie.poster.thumb(200,auto) }}" data-holder-rendered="true">
+                            <div class="card-body">
+                                <h3>
+                                    <a href="/reconflix/review/{{ review.slug }}">
+                                        {{ review.title }} - {{ review.movie.year }}
+                                    </a>
+                                </h3>
+                                <p class="card-text">{{ review.excerpt }}</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    </div>
+                                    <small class="text-muted">4 stars</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            No reviews were found
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 
-{% component 'actors' %}
+</main>
