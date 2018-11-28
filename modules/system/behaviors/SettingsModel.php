@@ -3,8 +3,9 @@
 use App;
 use Artisan;
 use Cache;
+use Log;
+use Exception;
 use System\Classes\ModelBehavior;
-use ApplicationException;
 
 /**
  * Settings model extension
@@ -204,7 +205,12 @@ class SettingsModel extends ModelBehavior
     public function afterModelSave()
     {
         Cache::forget($this->getCacheKey());
-        Artisan::call('queue:restart');
+
+        try {
+            Artisan::call('queue:restart');
+        } catch (Exception $e) {
+            Log::warning($e->getMessage());
+        }
     }
 
     /**

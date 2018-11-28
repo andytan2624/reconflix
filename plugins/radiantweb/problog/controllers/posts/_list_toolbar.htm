@@ -1,0 +1,31 @@
+<div data-control="toolbar">
+    <a href="<?= Backend::url('radiantweb/problog/posts/create') ?>" class="btn btn-primary oc-icon-plus"><?= e(trans('radiantweb.problog::lang.backend.post.toolbar.toolbarnew')) ?></a>
+    <button
+        class="btn btn-default oc-icon-files-o"
+        disabled="disabled"
+        onclick="$(this).data('request-data', {
+            checked: $('.control-list').listWidget('getChecked')
+        })"
+        data-request="onDuplicate"
+        data-request-confirm="Are you sure?"
+        data-trigger-action="enable"
+        data-trigger=".control-list input[type=checkbox]"
+        data-trigger-condition="checked"
+        data-stripe-load-indicator>
+        <?= e(trans('radiantweb.problog::lang.backend.toolbar.duplicate')) ?>
+    </button>
+    <button
+        class="btn btn-default oc-icon-trash-o"
+        disabled="disabled"
+        onclick="$(this).data('request-data', {
+            checked: $('.control-list').listWidget('getChecked')
+        })"
+        data-request="onDelete"
+        data-request-confirm="Are you sure?"
+        data-trigger-action="enable"
+        data-trigger=".control-list input[type=checkbox]"
+        data-trigger-condition="checked"
+        data-stripe-load-indicator>
+        <?= e(trans('radiantweb.problog::lang.backend.toolbar.delete')) ?>
+    </button>
+</div>

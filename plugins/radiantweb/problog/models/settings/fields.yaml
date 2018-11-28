@@ -1,0 +1,69 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+tabs:
+    fields:
+
+        blogPost:
+            label: radiantweb.problog::lang.settings.labels.render
+            tab: radiantweb.problog::lang.settings.tabs.render
+            type: dropdown
+            default: none
+
+        defaultParent:
+            label: radiantweb.problog::lang.settings.labels.parent
+            tab: radiantweb.problog::lang.settings.tabs.render
+            type: dropdown
+            default: none
+
+        defaultBaseSlug:
+            label: radiantweb.problog::lang.settings.labels.defaultbaseslug
+            commentAbove: radiantweb.problog::lang.settings.labels.defaultbaseslugsubtext
+            tab: radiantweb.problog::lang.settings.tabs.render
+            type: balloon-selector
+            options:
+                category: radiantweb.problog::lang.settings.labels.defaultbaseslugcategory
+                post: radiantweb.problog::lang.settings.labels.defaultbaseslugpost
+
+        markdownMode:
+            label: radiantweb.problog::lang.settings.labels.editor
+            tab: radiantweb.problog::lang.settings.tabs.editor
+            type: checkbox
+
+        sharethis:
+            label: radiantweb.problog::lang.settings.labels.sharethis
+            tab: radiantweb.problog::lang.settings.tabs.social
+
+        facebook:
+            label: radiantweb.problog::lang.settings.labels.facebook
+            tab: radiantweb.problog::lang.settings.tabs.social
+            type: checkbox
+
+        twitter:
+            label: radiantweb.problog::lang.settings.labels.twitter
+            tab: radiantweb.problog::lang.settings.tabs.social
+            type: checkbox
+
+        google:
+            label: radiantweb.problog::lang.settings.labels.google
+            tab: radiantweb.problog::lang.settings.tabs.social
+            type: checkbox
+
+        embedly:
+            label: radiantweb.problog::lang.settings.labels.embedly
+            tab: radiantweb.problog::lang.settings.tabs.api
+
+        bluemix_nlp_username:
+            label: radiantweb.problog::lang.settings.labels.nlpuname
+            tab: radiantweb.problog::lang.settings.tabs.api
+
+
+        bluemix_nlp_password:
+            label: radiantweb.problog::lang.settings.labels.nlppass
+            tab: radiantweb.problog::lang.settings.tabs.api
+
+        twitter_auth:
+            label: radiantweb.problog::lang.settings.labels.twitterauth
+            tab: radiantweb.problog::lang.settings.tabs.authentication
+            type: authenticatetwiter

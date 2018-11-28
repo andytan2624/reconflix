@@ -1,0 +1,232 @@
+<style type="text/css">
+    .good{color: green!important;}
+    .borderline{color: #f2a502!important;}
+    .poor{color: maroon!important;}
+    tr.good td{background-color: #d4ffd0!important;}
+    tr.borderline td{background-color: #fff6d5!important;}
+    tr.poor td{background-color: #ffd9d9!important;}
+    td.checkmark{font-size: 22px;}
+    #blogBody_ifr{height: 900px!important;}
+</style>
+
+<?php if ($bluemix_nlp_username && $bluemix_nlp_password): ?>
+    <div id="loading_results" class="loading-indicator-container">
+        <div class="loading-indicator indicator-center">
+            <span></span>
+            <div>Loading your optimized results...</div>
+        </div>
+    </div>
+    <div id="optimized_results" class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-8">
+
+                <div style="display: none;" id="content_dom"></div>
+                <h4>Natural Language Keyword Phrase Strength  <i class="icon icon-question-sign tooltips" title="<p>Natural Language Processing (NLP) is an advanced algorithm design to appropriately arranged keywords as users would most likely search for them</p><p>This differs from single keyword density in that users rarely will search for any given term by itself.  Thus providing a more concise recognizable grouping of keyword terms.  Search Engines are now progressing to recognize and parse data in this way</p>"></i></h4>
+                <table id="phrase_result" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>NLP Keyword Phrase</th>
+                            <th>Search Relevance</th>
+                            <th>Times Used</th>
+                            <th>Density %</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+
+                <h4>Single Keyword Strength  <i class="icon icon-question-sign tooltips" title="<p>Single Keyword Optimization is still very important in how Search Engines view your content</p><p>The recommended Keyword Density is 1-3%</p>"></i></h4>
+                <table id="single_result" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Keyword</th>
+                            <th>Times Used</th>
+                            <th>Density %</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+
+                <h4>Link Usage <i id="link_metric"></i>  <i class="icon icon-question-sign tooltips" title="<p>Link use is also important in how Search Engines perceive your content.</p><p>The more links you have to related & relevant content, the more relevant Search Engines deem your post.</p><p>Having XMLRPC compatible links can also have a positive impact as your posts will be cross commented between both sites with back linking available for crawlers.</p><p>The recommended Link Density is .5-1.5%</p>"></i></h4>
+                <table id="links_result" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Link Address</th>
+                            <th>Valid URL</th>
+                            <th>XMLRPC</th>
+                            <th>Rel Nofollow</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+
+                <h4>Image Usage <i id="image_metric"></i>  <i class="icon icon-question-sign tooltips" title="<p>Because most Search Engines now index images for use in their optimized image search tools, having images in your posts can have a positive impact on your page rankings.</p><p>The recommended Image Density is .5-1.5%</p>"></i></h4>
+                <table id="img_result" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Link Address</th>
+                            <th>Valid URL</th>
+                            <th>Alt Data</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-xs-12 col-md-3">
+                <h4>SEO Checklist  <i class="icon icon-question-sign tooltips" title="<p>This list is designed to help you produce consistent & relevant content that is search optimized and spider friendly.</p><p>The below should be considered the minimum requirement for h4er SEO presence.</p>"></i></h4>
+                <table id="metrics" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Meta Title</td>
+                            <td class="checkmark"><i class="fa fa-circle-o meta-title"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Meta Description</td>
+                            <td class="checkmark"><i class="fa fa-circle-o meta-description"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Meta Keywords</td>
+                            <td class="checkmark"><i class="fa fa-circle-o meta-keywords"></i></td>
+                        </tr>
+                        <tr>
+                            <td>NLP Keyphrase Density</td>
+                            <td class="checkmark"><i class="fa fa-circle-o keyphrase"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Keyword Density</td>
+                            <td class="checkmark"><i class="fa fa-circle-o keyword"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Link Density</td>
+                            <td class="checkmark"><i class="fa fa-circle-o links"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Image Density</td>
+                            <td class="checkmark"><i class="fa fa-circle-o images"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Meta's Checklist  <i class="icon icon-question-sign tooltips" title="<p>Correlating Meta data is surprizingly often overlooked. </p><p>This Checklist is designed to help you keep your keyword phrases and keyword strategy consistent throughout your meta data</p>"></i></h4>
+                <table id="meta_stats" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Meta Title contains a top used Keyphrase</td>
+                            <td class="checkmark"><i class="fa fa-circle-o meta-title"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Meta Description contains top 5 keywords</td>
+                            <td class="checkmark"><i class="fa fa-circle-o meta-description"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Meta Keywords contain top 5 keyphrases & top 5 keywords</td>
+                            <td class="checkmark"><i class="fa fa-circle-o meta-keywords"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Associated Tags contain 3 keywords</td>
+                            <td class="checkmark"><i class="fa fa-circle-o post-tags"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>HTML Checklist  <i class="icon icon-question-sign tooltips" title="<p>This Checklist is designed to optimize your use of HTML tags.</p><p>Search Engines now prioritize semantically structured content over older markup formatting.</p>"></i></h4>
+                <table id="html_stats" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Page title contains a top used keyphrase</td>
+                            <td class="checkmark"><i class="fa fa-circle-o title"></i></td>
+                        </tr>
+                        <tr>
+                            <td>No H1 tags within your post</td>
+                            <td class="checkmark"><i class="fa fa-circle-o no-h1s"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Use of H2 tags</td>
+                            <td class="checkmark"><i class="fa fa-circle-o h2s"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Use of Blockquote tags</td>
+                            <td class="checkmark"><i class="fa fa-circle-o blockquotes"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var checkUrl = '<?=$checkUrl?>';
+        var checkUrlXmlrpc = '<?=$checkUrlXmlrpc?>';
+
+        $(document).ready(function(){
+            $('#Form-primaryTabs .nav-tabs a').click(function(){
+                if($(this).attr('title') == 'SEO Optimizer'){
+
+                    $('#optimized_results').hide();
+
+                    var content = getContent();
+                    var text = content.replace(/(<([^>]+)>|&nbsp;)/ig,"");
+
+                    $.request('onFetchKewordNLP', {
+                        data: {
+                            text: text
+                        },
+                        loading: '#loading_results',
+                        success: function(data) {
+                            //console.log(JSON.parse(data.result));
+                            getKeywordsFromText(JSON.parse(data.result));
+                        },
+                        complete: function() {
+                            scrapeSingleKeywords();
+                            getArticleImages();
+                            doSeoChecks();
+                            doMetaChecks();
+                            doHtmlChecks();
+                            getArticleLinks();
+
+                            $('#optimized_results').show();
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+
+<?php else: ?>
+
+    <div class="callout fade in callout-warning">
+        <div class="content">
+            <p>
+                Please enter your Bluemix NLP Credentials in your
+                <a href="<?= Backend::url('system/settings/update/radiantweb/problog/settings') ?>">ProBlog Settings page</a>
+                to enable this feature.
+            </p>
+        </div>
+    </div>
+
+<?php endif ?>

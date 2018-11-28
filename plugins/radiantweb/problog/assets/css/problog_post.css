@@ -1,0 +1,20 @@
+#problog_post_mini_social {
+  float: right;
+  display: inline-block;
+  margin-top: 22px;
+}
+#problog_post_social {
+  margin: 22px 0;
+  display: block;
+}
+#problog_post_social .stMainServices {
+  height: 32px;
+}
+#problog_post_social .stHBubble {
+  height: 22px;
+}
+@media only screen and (max-width: 768px) {
+  #problog_post_navigation {
+    float: none;
+  }
+}

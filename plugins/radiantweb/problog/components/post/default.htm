@@ -1,0 +1,77 @@
+{% if render_category %}
+    {% component 'proBlogList' %}
+{% else %}
+    <h1>{{ post_item.title }}</h1>
+    <h4>{{ 'Posted By'|_ }}: {{ author.login }} {% if author.image %} <img src="{{ author.image }}" alt="avatar"
+                                                                          width="20"/> {% endif %}</h4>
+    <p class="info">
+        {{ 'Published'|_ }}
+        {% if post_item.categories_id %} {{ 'to'|_ }} <a href="{{ parentPage|page({'filter':'category','slug': post_item.categories.slug }) }}/">{{ post_item.categories.name }}</a>{% endif %}
+        on {{ post_item.published_at|date('M d, Y') }}
+    </p>
+    <div id="blog_post_body">
+        {% if post_item.featured_images[0]['path'] %}
+            <p><img src="{{post_item.featured_images[0]['path']}}" alt="blog_post_{{post_item.id}}" width="100%" /></p>
+        {% endif %}
+        {% set content_parsed = parseBlogPost(post_item.content) %}
+
+        {% if content_parsed %}
+            {% for content in content_parsed %}
+                {% if content.partial %}
+                    {% partial content.partial %}
+                {% else %}
+                    {{ content|raw }}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </div>
+    <p class="info">
+        {{ 'Tags'|_ }}:
+        {% for tag in post_item.tags %}
+            <a href="{{ parentPage|page({'filter':'tag','slug': tag.slug }) }}/">{{ tag.name }}</a>{% if not loop.last %}, {% endif %}
+        {% endfor %}
+    </p>
+    <div id="problog_post_social">
+    {% if sharethis > 0 %}
+        {% if twitter > 0 %}<span class='st_twitter_hcount' displayText='Tweet'></span>{% endif %}
+        {% if facebook > 0 %}<span class='st_facebook_hcount' displayText='Facebook'></span>{% endif %}
+        {% if google > 0 %}<span class='st_plusone_hcount' displayText='Plusone'></span>{% endif %}
+
+        <script type="text/javascript">var switchTo5x=true;</script>
+        <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+        <script type="text/javascript">stLight.options({publisher:"{{ sharethis }}"});</script>
+    {% endif %}
+    </div>
+
+    {% put scripts %}
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $('pre code').each(function(){
+                $(this).parent().addClass('prettyprint');
+            });
+            prettyPrint();
+        });
+        </script>
+    {% endput %}
+
+    {% if embedly %}
+        {% put scripts %}
+            <script type="text/javascript">
+            $(document).ready(function(){
+              $('#blog_post_body a').each(function(){
+                if($(this).text() == 'embedly'){
+                    $(this).addClass('embedly');
+                    var w = $(this).parent().parent().width();
+                    $(this).embedly({
+                        key: '{{embedly}}',
+                        query: {
+                            maxwidth: w,
+                        },
+                    });
+                }
+              });
+            });
+            </script>
+        {% endput %}
+    {% endif %}
+{% endif %}

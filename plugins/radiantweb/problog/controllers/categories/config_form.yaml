@@ -1,0 +1,18 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+name: Categories
+form: ./plugins/radiantweb/problog/models/category/fields.yaml
+model-class: Radiantweb\Problog\Models\Category
+default-redirect: radiantweb/problog/categories
+
+create:
+    title: radiantweb.problog::lang.backend.category.toolbar.create
+    redirect: radiantweb/problog/categories/update/:id
+    redirectClose: radiantweb/problog/categories
+
+update:
+    title: radiantweb.problog::lang.backend.category.toolbar.edit
+    redirect: radiantweb/problog/categories
+    redirectClose: radiantweb/problog/categories

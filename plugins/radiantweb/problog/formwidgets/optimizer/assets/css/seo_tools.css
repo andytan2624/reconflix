@@ -1,0 +1,8 @@
+.alchemy{
+	width: 100px;
+	height: 20px;
+	display: block;
+	background-image: url('./AlchemyAPI_Logo.png');
+	background-size: 100px auto;
+	float: right;
+}

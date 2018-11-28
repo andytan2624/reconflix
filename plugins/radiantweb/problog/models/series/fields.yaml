@@ -1,0 +1,14 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+  name:
+    label: radiantweb.problog::lang.backend.series.fields.name
+    span: left
+
+  slug:
+    label: radiantweb.problog::lang.backend.series.fields.slug
+    span: right
+    attributes:
+        data-input-preset: 'input[name="Series[name]"]'

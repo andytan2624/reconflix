@@ -1,0 +1,15 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+
+    name:
+        label: radiantweb.problog::lang.backend.tag.fields.name
+        span: left
+
+    slug:
+        label: radiantweb.problog::lang.backend.tag.fields.slug
+        span: right
+        attributes:
+            data-input-preset: 'input[name="Tag[name]"]'

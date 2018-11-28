@@ -1,0 +1,42 @@
+<h3>{{ 'Archive'|_ }}</h3>
+<ul class="category-list">
+    {% set years = [] %}
+    {% set months = [] %}
+    {% for post in blogArchive %}
+        {% set post_y = post.published_at|date("Y") %}
+        {% set post_m = post.published_at|date("m") %}
+
+        {% if post_y not in years %}
+            {% if years|length > 0 %}
+                {% if months|length > 0 %}</ul>{% endif %}
+                {% set months = [] %}
+                </ul>
+            {% endif %}
+            {% set years = years|merge([post_y]) %}
+            <li class="year" style="cursor: pointer;">{{post_y}}</li>
+            <ul class="year_list" {% if years|length > 1 %} style="display: none;" {% endif %}>
+        {% endif %}
+
+        {% if post_m not in months %}
+            {% if months|length > 0 %}</ul>{% endif %}
+            {% set months = months|merge([post_m]) %}
+            <li class="month">{{post_m}}</li>
+                <ul class="month_list">
+        {% endif %}
+        <li>
+            <a href="{{ __SELF__.postRender(post.parent)|page({'filter': post.categories.slug,'slug': post.slug, 'instance': null }) }}/">&raquo; &nbsp; {{ post.title }}</a>
+        </li>
+    {% endfor %}
+        </ul>
+    </ul>
+</ul>
+{% put scripts %}
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.year').click(function(){
+            $('.year_list').slideUp();
+            $(this).next('.year_list').slideDown();
+        })
+    });
+</script>
+{% endput %}

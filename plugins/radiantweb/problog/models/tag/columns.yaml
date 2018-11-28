@@ -1,0 +1,11 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    name:
+        label: radiantweb.problog::lang.backend.tag.columns.name
+
+    slug:
+        label: radiantweb.problog::lang.backend.tag.columns.slug

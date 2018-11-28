@@ -1,0 +1,40 @@
+# ===================================
+#  List Behavior Config
+# ===================================
+
+# Model List Column configuration
+list: ./plugins/radiantweb/problog/models/post/columns.yaml
+
+# Model Class name
+modelClass: Radiantweb\Problog\Models\Post
+
+# List Title
+title: Manage Blog Posts
+
+# Link URL for each record
+recordUrl: radiantweb/problog/posts/update/:id
+
+# Message to display if the list is empty
+noRecordsMessage: backend::lang.list.no_records
+
+# Records to display per page
+recordsPerPage: 25
+
+# Displays the list column set up button
+showSetup: true
+
+# Display checkboxes next to each record
+showCheckboxes: yes
+
+# Toolbar widget configuration
+toolbar:
+    # Partial for toolbar buttons
+    buttons: list_toolbar
+
+    # Search widget configuration
+    search:
+        prompt: backend::lang.list.search_prompt
+
+
+# Filter widget configuration
+filter: config_filter.yaml

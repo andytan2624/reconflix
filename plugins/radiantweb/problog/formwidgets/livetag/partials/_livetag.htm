@@ -1,0 +1,24 @@
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#problogTags").tagit({
+            availableTags: [
+                <?php foreach ($existing_tags as $tag): ?>
+                    `<?=$tag?>`,
+                <?php endforeach ?>
+            ],
+            allowSpaces: true,
+            fieldName: 'Post[tags][]'
+        });
+    });
+</script>
+
+<strong>Tags:</strong>
+
+<ul id="problogTags">
+    <?php if ($value): ?>
+        <?php foreach ($value as $tag): ?>
+            <li><?= $tag->name?></li>
+        <?php endforeach ?>
+    <?php endif ?>
+    <!-- Existing list items will be pre-added to the tags -->
+</ul>

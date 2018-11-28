@@ -1,0 +1,31 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    title:
+        label: radiantweb.problog::lang.backend.post.columns.title
+        searchable: true
+
+    author:
+        label: radiantweb.problog::lang.backend.post.columns.author
+        relation: user
+        select: login
+        searchable: true
+
+    parent:
+        label: radiantweb.problog::lang.backend.post.columns.parent
+        searchable: true
+
+    categories:
+        label: radiantweb.problog::lang.backend.post.columns.category
+        relation: categories
+        select: name
+
+    published_at:
+        label: radiantweb.problog::lang.backend.post.columns.publishedat
+        type: datetime
+
+    published:
+        label: radiantweb.problog::lang.backend.post.columns.published

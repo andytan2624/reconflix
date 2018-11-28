@@ -1,0 +1,126 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+tabs:
+    fields:
+
+        title:
+            tab: radiantweb.problog::lang.backend.post.fields.tab.general
+            label: radiantweb.problog::lang.backend.post.fields.title
+            span: left
+            placeholder: New post title
+
+        slug:
+            tab: radiantweb.problog::lang.backend.post.fields.tab.general
+            label: radiantweb.problog::lang.backend.post.fields.slug
+            span: right
+            placeholder: new-post-slug
+            attributes:
+                data-input-preset: 'input[name="Post[title]"]'
+                data-input-preset-type: slug
+                data-input-preset-closest-parent: form
+
+        excerpt:
+            tab: radiantweb.problog::lang.backend.post.fields.tab.general
+            label: radiantweb.problog::lang.backend.post.fields.excerpt
+            type: textarea
+            size: small
+
+        featured_images:
+            tab: radiantweb.problog::lang.backend.post.fields.tab.general
+            label: radiantweb.problog::lang.backend.post.fields.featured
+            type: fileupload
+            options:
+                mode: image
+                image-width: 200
+                image-height: 200
+
+        # featured_media:
+        #     tab: radiantweb.problog::lang.backend.post.fields.tab.general
+        #     label: radiantweb.problog::lang.backend.post.fields.featured
+        #     type: mediafinder
+
+        content:
+            tab: radiantweb.problog::lang.backend.post.fields.tab.content
+            type: richeditor
+
+        meta_title:
+            tab: radiantweb.problog::lang.backend.post.fields.tab.metas
+            label: radiantweb.problog::lang.backend.post.fields.metatitle
+            span: full
+            placeholder: meta title
+
+        meta_description:
+            tab: radiantweb.problog::lang.backend.post.fields.tab.metas
+            label: radiantweb.problog::lang.backend.post.fields.metadescription
+            type: textarea
+            span: left
+            placeholder: meta description
+
+        meta_keywords:
+            tab: radiantweb.problog::lang.backend.post.fields.tab.metas
+            label: radiantweb.problog::lang.backend.post.fields.metakeyword
+            type: textarea
+            span: right
+            placeholder: meta keywords
+
+        optimize:
+            tab: radiantweb.problog::lang.backend.post.fields.tab.optimizer
+            label: radiantweb.problog::lang.backend.post.fields.optimize
+            type: optimizer
+            span: full
+
+        post_twitter:
+            tab: Social
+            label: radiantweb.problog::lang.backend.post.fields.twitter
+            type: posttotwitter
+        versions:
+            tab: Versions
+            type: posthistory
+
+secondaryTabs:
+    stretch: yes
+    fields:
+        parent:
+            label: radiantweb.problog::lang.backend.post.fields.parent
+            tab: radiantweb.problog::lang.backend.post.fields.tab.publish
+            type: dropdown
+
+        user:
+            label: radiantweb.problog::lang.backend.post.fields.user
+            tab: radiantweb.problog::lang.backend.post.fields.tab.publish
+            type: relation
+            nameFrom: login
+
+        published_at:
+            tab: radiantweb.problog::lang.backend.post.fields.tab.publish
+            label: radiantweb.problog::lang.backend.post.fields.publishedon
+            span: full
+            type: datepicker
+            options:
+                mode: datetime
+
+        published:
+            tab: radiantweb.problog::lang.backend.post.fields.tab.publish
+            label: radiantweb.problog::lang.backend.post.fields.published
+            span: full
+            type: checkbox
+
+        series:
+            tab: radiantweb.problog::lang.backend.post.fields.tab.taxonomy
+            type: relation
+            commentAbove: radiantweb.problog::lang.backend.post.fields.series_note
+            placeholder: none
+
+        categories:
+            tab: radiantweb.problog::lang.backend.post.fields.tab.taxonomy
+            type: relation
+            commentAbove: radiantweb.problog::lang.backend.post.fields.category_note
+            placeholder: none
+
+        tags:
+            tab: radiantweb.problog::lang.backend.post.fields.tab.taxonomy
+            type: livetag
+            commentAbove: radiantweb.problog::lang.backend.post.fields.tag_note
+            placeholder: none

@@ -1,0 +1,10 @@
+<h3>{{ 'Tags'|_ }}</h3>
+<ul class="tag-list">
+    {% for tag in blogTags %}
+        {% set postCount = tag.postCount %}
+        <li {% if tag.slug == blogCurrentTagSlug %}class="active"{% endif %}>
+            <a href="{{ blogTagPage|page({'filter': 'tag', 'slug': tag.slug, 'instance': null }) }}/">{{ tag.name }}</a>
+            <span class="badge">{{ postCount }}</span>
+        </li>
+    {% endfor %}
+</ul>

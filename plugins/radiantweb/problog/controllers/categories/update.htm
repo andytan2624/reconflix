@@ -1,0 +1,54 @@
+<?php Block::put('breadcrumb') ?>
+    <ul>
+        <li><a href="<?= Backend::url('radiantweb/problog/categories') ?>"><?= e(trans('radiantweb.problog::lang.backend.category.form.title')) ?></a></li>
+        <li><?= e($this->pageTitle) ?></li>
+    </ul>
+<?php Block::endPut() ?>
+
+<?php if (!$this->fatalError): ?>
+
+    <?= Form::open(['class' => 'layout']) ?>
+
+        <div class="layout-row">
+            <?= $this->formRender() ?>
+        </div>
+
+        <div class="form-buttons">
+            <div class="loading-indicator-container">
+                <button
+                    type="submit"
+                    data-request="onSave"
+                    data-request-data="redirect:0"
+                    data-hotkey="ctrl+s"
+                    data-hotkey-mac="cmd+s"
+                    data-load-indicator="Updating Category..."
+                    class="btn btn-primary">
+                    <?= e(trans('radiantweb.problog::lang.backend.form.update')) ?>
+                </button>
+                <button
+                    type="button"
+                    data-request="onSave"
+                    data-request-data="close:1"
+                    data-hotkey="ctrl+enter"
+                    data-hotkey-mac="cmd+enter"
+                    data-load-indicator="Updating Category..."
+                    class="btn btn-default">
+                    <?= e(trans('radiantweb.problog::lang.backend.form.updateclose')) ?>
+                </button>
+                <span class="btn-text">or <a href="<?= Backend::url('radiantweb/problog/categories') ?>"><?= e(trans('radiantweb.problog::lang.backend.form.cancel')) ?></a></span>
+                <button
+                    type="button"
+                    class="oc-icon-trash-o btn-icon danger pull-right"
+                    data-request="onDelete"
+                    data-load-indicator="Deleting Catgory..."
+                    data-request-confirm="<?= e(trans('radiantweb.problog::lang.backend.category.form.confirmdelete')) ?>">
+                </button>
+            </div>
+        </div>
+
+    <?= Form::close() ?>
+
+<?php else: ?>
+    <p class="flash-message static error"><?= e($this->fatalError) ?></p>
+    <p><a href="<?= Backend::url('radiantweb/problog/categories') ?>" class="btn btn-default"><?= e(trans('radiantweb.problog::lang.backend.category.form.back')) ?></a></p>
+<?php endif ?>

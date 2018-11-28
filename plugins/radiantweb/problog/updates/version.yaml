@@ -1,0 +1,133 @@
+1.0.2:
+    - Initialize plugin
+    - create_posts_table.php
+    - create_categories_table.php
+    - create_tags_table.php
+    - seed_all_tables.php
+1.0.3: Page List refactor. View updates. Post model now requires content instead of excerpt
+1.0.4: metadata refactor. category linking bug fix
+1.0.5: author additions. save and close fix
+1.0.7: twig partial parser for blog content. now can be placed anywere in post
+1.0.8: delete post icon fix
+1.0.9: pagelist deprication fix
+1.1.0:
+    - post to twitter added
+    - add_twitter_auth.php
+1.1.1: view updates
+1.1.2: added delete & duplicate to list view
+1.1.3: bug fix Alchemy API tab js execute
+1.1.4: now supports multiple list components per page
+1.1.5: List refactoring
+1.1.6: purgeable no longer autoloading fix
+1.2.0: Static Pages/Menus Integration
+1.3.0: Translation Multilingual integration
+1.4.0: Sort Order Images
+1.4.1: List switch to published_at from created_at
+1.4.2: duplicate is_bind bug fix. added author select
+1.4.3: default parent page setting. 404 redirect for post components. dual page render implement
+1.5.0:
+    - add Markdown mode
+    - add_markdown_field.php
+1.5.2: prettyPrint fix
+1.5.3: normal editor condition added
+1.5.4: SEO Optimizer Tool now work with markdown mode. improved markdown code syntax highlighting
+1.5.6: added large screen mode to markdown editor
+1.5.7: user plugin auth check
+1.5.8: added permissions
+1.5.9: params work in post view
+1.6.0: params work in list view
+2.0.0: !!! Plugin is now compatible with the RC version of October
+3.0.0: !!! Updates to components
+3.0.1: pagination bug fix
+3.0.2: remove unneeded field form div
+3.0.3: markdown update
+3.0.4: redactor reimplementation for SEOoptimizer. markdown work. id changed to slug post component
+3.0.5: css editor update
+3.0.6: custom markdown editor has been replaced with the native markdown editor
+3.1.0: cleaned up the underlying codebase and form widget file structure
+3.1.1: Optimizer now supports new markdown editor
+3.1.2: add ProBlog settings permissions
+3.2.0:
+    - !!! MAJOR REFACTOR - PLEASE REREAD DOCS ON POST RENDERING !!!
+    - removed autocreate category Page form element
+    - BlogList now will inject BlogPost component automatically when categoryname + slug is provided
+    - links in sample views have all been updated to reflect this change
+3.2.1: correct category save bug
+3.2.2: correct category url in blogList
+3.2.3:
+    - translations added to backend
+    - add back $post var to post view
+3.2.4:
+    - add $post public to post view
+3.2.5:
+    - bug fix multi-select delete and duplicate
+3.2.6:
+    - !!! updates for core release
+    - categories are now translatable
+3.2.7:
+    - add bulk delete to tags
+    - add bulk delete to categories
+    - add autocomplete to post tags
+    - allow spaces in tags
+    - confirm utf-8 compliance in tags
+    - add post backend list filters
+    - add post backend header controls
+3.2.8:
+    - update editor reference
+3.2.9:
+    - update editor markdown refresh
+3.3.0:
+    - correct markdown saving bugs
+3.3.1:
+    - fix for self bug on save
+3.3.2:
+    - add further cannonical date component filtering options
+3.4.0:
+    - add impressions field to post model for trending and popular posts filtering, new related posts component
+    - add_impressions_field.php
+3.5.0:
+    - cleanup of slug routing
+    - further refinement of singlepage blog routing
+3.6.0:
+    - add author bio to backend user model
+    - create_authors_table.php
+3.6.2:
+    - add series association
+    - create_series_table.php
+4.0.0:
+    - add post versioning
+    - create_versions_table.php
+4.0.1:
+    - update db scripts to correct install bug
+4.0.2:
+    - Alchemy API now requires https connection per IBM
+5.0.0:
+    - !!! udpate to IBM Watson Bluemix NLP
+    - do to the aquisition of AlchemyAPI ProBlog has been converted over to utilize IBM Watson Blue Mix
+    - see documentation
+5.0.1:
+    - bugfix for author error on new model creation
+5.0.2:
+    - 2nd bugfix attempt for author errors
+5.0.3:
+    - add base slug filter setting
+5.0.4:
+    - add featured media
+    - add_featured_media.php
+    - correct post component 404
+5.0.5:
+    - correct property naming and for filters
+    - change category and tag filters to be by slug not name
+5.0.6:
+    - rushed typo correction I suck.
+5.0.7:
+    - correct livetag apostrophe handling thank you Paul Graphx
+5.0.8:
+    - optimizer content improvements
+5.0.9:
+    - settings localization
+5.1.0:
+    - add error handling for bad twitter auth URL
+5.1.1:
+    - bad tag/cat url 404 improvemnt
+    - markdown saving correction

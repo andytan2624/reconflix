@@ -1,0 +1,31 @@
+# ===================================
+# Filter Scope Definitions
+# ===================================
+scopes:
+
+    category:
+
+        # Filter name
+        label: radiantweb.problog::lang.backend.post.columns.category
+
+        # Model Class name
+        modelClass: Radiantweb\Problog\Models\Category
+
+        # Model attribute to display for the name
+        nameFrom: name
+
+        # Apply query scope
+        scope: FilterByCategory
+
+    published:
+
+        # Filter name
+        label: radiantweb.problog::lang.backend.post.columns.published
+
+        # Filter type
+        type: switch
+
+        # SQL Conditions
+        conditions:
+            - published <> '1'
+            - published = '1'

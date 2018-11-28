@@ -1,0 +1,20 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+
+  name:
+    label: radiantweb.problog::lang.backend.category.fields.name
+    span: left
+
+  slug:
+    label: radiantweb.problog::lang.backend.category.fields.slug
+    span: right
+    attributes:
+        data-input-preset: 'input[name="Category[name]"]'
+
+  # generate:
+  #   label: radiantweb.problog::lang.createcategory.labels.generate
+  #   span: left
+  #   type: checkbox

@@ -1,0 +1,26 @@
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th><?=e(trans('radiantweb.problog::lang.widgets.history.version'))?></th>
+      <th><?=e(trans('radiantweb.problog::lang.widgets.history.title'))?></th>
+      <th><?=e(trans('radiantweb.problog::lang.widgets.history.time'))?></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php foreach($value as $val) { ?>
+        <tr>
+          <td><?=$val->version?></td>
+          <td><?=$val->title?></td>
+          <td><?=$val->created_at?></td>
+          <td><a href="#" class="btn-xs btn-success"
+              data-request = 'onRestoreVersion'
+              data-request-data = "version: <?=$val->version?>"
+              data-request-confirm = "<?=e(trans('radiantweb.problog::lang.widgets.history.confirm'))?>"
+              data-request-redirect = './<?=$model->id?>/'
+              ><span class="icon icon-refresh"></span></a></td>
+        </tr>
+    <?php } ?>
+  </tbody>
+</table>

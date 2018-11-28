@@ -1,0 +1,18 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+name: Blog Post
+form: ./plugins/radiantweb/problog/models/post/fields.yaml
+modelClass: Radiantweb\Problog\Models\Post
+defaultRedirect: radiantweb/problog/posts
+
+create:
+    title: radiantweb.problog::lang.backend.post.toolbar.create
+    redirect: radiantweb/problog/posts/update/:id
+    redirectClose: radiantweb/problog/posts
+
+update:
+    title: radiantweb.problog::lang.backend.post.toolbar.edit
+    redirect: radiantweb/problog/posts
+    redirectClose: radiantweb/problog/posts

@@ -1,0 +1,18 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+name: Tags
+form: ./plugins/radiantweb/problog/models/tag/fields.yaml
+model-class: Radiantweb\Problog\Models\Tag
+default-redirect: radiantweb/problog/tags
+
+create:
+    title: radiantweb.problog::lang.backend.tag.toolbar.create
+    redirect: radiantweb/problog/tags/update/:id
+    redirectClose: radiantweb/problog/tags
+
+update:
+    title: radiantweb.problog::lang.backend.tag.toolbar.edit
+    redirect: radiantweb/problog/tags
+    redirectClose: radiantweb/problog/tags

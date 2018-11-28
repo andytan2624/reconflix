@@ -1,0 +1,27 @@
+<br/>
+
+<?php if (!isset($username)): ?>
+
+    <a href="#" data-request="onGetTwiterAuth" class="btn btn-info">
+        <?=e(trans('radiantweb.problog::lang.widgets.twitter.authorize'))?>
+    </a>
+
+<?php else: ?>
+
+    <?=e(trans('radiantweb.problog::lang.widgets.twitter.connected'))?><br/><br/>
+
+    <img src="<?=$profilepic?>" width="22px" />
+
+    <a href="https://twitter.com/#!/<?=$username?>">
+        <?= $username ?>
+    </a>
+
+    <a
+        href="#"
+        data-request="onClearTwitterAuth"
+        data-request-success="window.location.href = '<?=$reload?>';"
+        class="btn btn-danger ccm-button-v2-right">
+        Clear
+    </a>
+
+<?php endif ?>

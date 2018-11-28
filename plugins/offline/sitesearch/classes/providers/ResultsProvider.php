@@ -52,7 +52,8 @@ abstract class ResultsProvider
      */
     public function __construct($query = null)
     {
-        $this->query       = $query;
+        $this->setQuery($query);
+        
         $this->identifier  = $this->identifier();
         $this->displayName = $this->displayName();
         $this->translator  = $this->translator();
@@ -131,7 +132,7 @@ abstract class ResultsProvider
      */
     public function setQuery($query)
     {
-        $this->query = $query;
+        $this->query = trim($query);
 
         return $this;
     }
@@ -194,5 +195,19 @@ abstract class ResultsProvider
         }
 
         return $image;
+    }
+
+    /**
+     * Give old results an age penalty to list them below newer results.
+     *
+     * @param $ageInDays
+     *
+     * @return float
+     */
+    protected function getAgePenalty($ageInDays)
+    {
+        $penalty = $ageInDays * 0.003;
+
+        return $penalty > .9 ? .9 : $penalty;
     }
 }

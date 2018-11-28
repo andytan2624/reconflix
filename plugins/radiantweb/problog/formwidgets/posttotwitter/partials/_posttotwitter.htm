@@ -1,0 +1,35 @@
+<br />
+
+<?php if ($twitter_auth_token == ''): ?>
+
+    <div class="callout fade in callout-warning">
+        <div class="content">
+            <p>
+                <?=e(trans('radiantweb.problog::lang.widgets.twitter.please'))?>
+                <a href="<?= Backend::url('system/settings/update/radiantweb/problog/settings')?>"><?=e(trans('radiantweb.problog::lang.widgets.twitter.settings'))?></a>
+                <?=e(trans('radiantweb.problog::lang.widgets.twitter.enable'))?>
+            </p>
+        </div>
+    </div>
+
+<?php else: ?>
+
+    <div id="tweet_now">
+        <input
+            type="text"
+            name="<?=$name?>[message]"
+            placeholder="New Blog Post! {{url}} #Twitter #Hashtags"
+            class="form-control twitter_message"
+            style="width: 320px; display: inline-block;" />
+        <a
+            href="javascript:;"
+            data-request="onDoTweet"
+            data-request-data="message: $('.twitter_message').val()"
+            data-request-success="$('#tweet_now').html('<p>Tweet has been posted sucessfully!</p>');"
+            class="btn btn-info"
+            style="display: inline-block;">
+            <?=e(trans('radiantweb.problog::lang.widgets.twitter.tweet'))?>
+        </a>
+    </div>
+
+<?php endif ?>

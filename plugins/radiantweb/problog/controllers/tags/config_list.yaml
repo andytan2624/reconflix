@@ -1,0 +1,36 @@
+# ===================================
+#  List Behavior Config
+# ===================================
+
+# Model List Column configuration
+list: ./plugins/radiantweb/problog/models/tag/columns.yaml
+
+# Model Class name
+model-class: Radiantweb\Problog\Models\Tag
+
+# List Title
+title: Manage Calendars
+
+# Link URL for each record
+record-url: radiantweb/problog/tags/update/:id
+
+# Message to display if the list is empty
+no-records-message: backend::lang.list.no_records
+
+# Records to display per page
+records-per-page: 25
+
+# Display checkboxes next to each record
+show-checkboxes: no
+
+# Toolbar widget configuration
+toolbar:
+    # Partial for toolbar buttons
+    buttons: list_toolbar
+
+    # Search widget configuration
+    search:
+        prompt: backend::lang.list.search_prompt
+
+
+

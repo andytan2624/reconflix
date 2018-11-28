@@ -1,0 +1,10 @@
+<h3>{{ 'Categories'|_ }}</h3>
+<ul class="category-list">
+    {% for category in blogCategories %}
+        {% set postCount = category.postCount %}
+        <li {% if category.slug == blogCurrentCategorySlug %}class="active"{% endif %}>
+            <a href="{{ blogCategoryPage|page({'filter': 'category', 'slug': category.slug , 'instance': null}) }}/">{{ category.name }}</a>
+            <span class="badge">{{ postCount }}</span>
+        </li>
+    {% endfor %}
+</ul>

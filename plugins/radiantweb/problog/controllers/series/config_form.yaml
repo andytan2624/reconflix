@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Series
+
+# Model Form Field configuration
+form: $/radiantweb/problog/models/series/fields.yaml
+
+# Model Class name
+modelClass: Radiantweb\Problog\Models\Series
+
+# Default redirect location
+defaultRedirect: radiantweb/problog/series
+
+# Create page
+create:
+    title: Create Series
+    redirect: radiantweb/problog/series/update/:id
+    redirectClose: radiantweb/problog/series
+
+# Update page
+update:
+    title: Edit Series
+    redirect: radiantweb/problog/series
+    redirectClose: radiantweb/problog/series
+
+# Preview page
+preview:
+    title: Preview Series
