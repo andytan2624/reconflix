@@ -18,7 +18,7 @@ $$  /$$  /    \__|$$ |  $$ |\$$$$$$$ |\$$$$$$$ |$$ |\$$$$$$$ |$$ |  $$ | \$$$$  
 The first thing we must do is set up a parent blog page in your site.
 
 * **Create A Parent Blog Page** add a page to your site and call it "blog".
-    * edit the "url" of the page to be "/blog/:filter?/:slug?/:month?/:instance?/"
+    * edit the "url" of the page to be "/blog/:filter?/:slug?/:instance?/"
     * add the ProBlog BlogList component to your parent /blog page and make sure that the "Blog Parent Page" field is set to none. this will list all posts regardless of parent.
 
 The next thing we must do is set up our ProBlog Settings.  To do so, go to your Backend -> Settings -> ProBlog area.

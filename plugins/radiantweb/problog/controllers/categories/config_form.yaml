@@ -3,7 +3,7 @@
 # ===================================
 
 name: Categories
-form: ./plugins/radiantweb/problog/models/category/fields.yaml
+form: ~/plugins/radiantweb/problog/models/category/fields.yaml
 model-class: Radiantweb\Problog\Models\Category
 default-redirect: radiantweb/problog/categories
 

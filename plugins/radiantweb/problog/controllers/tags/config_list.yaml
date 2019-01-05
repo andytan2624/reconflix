@@ -3,7 +3,7 @@
 # ===================================
 
 # Model List Column configuration
-list: ./plugins/radiantweb/problog/models/tag/columns.yaml
+list: ~/plugins/radiantweb/problog/models/tag/columns.yaml
 
 # Model Class name
 model-class: Radiantweb\Problog\Models\Tag

@@ -17,6 +17,7 @@ use Markdown;
 class Post extends Model
 {
     use \October\Rain\Database\Traits\Purgeable;
+    use \October\Rain\Database\Traits\Validation;
 
     public $implement = ['@RainLab.Translate.Behaviors.TranslatableModel'];
 

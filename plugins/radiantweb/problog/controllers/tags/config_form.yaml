@@ -3,7 +3,7 @@
 # ===================================
 
 name: Tags
-form: ./plugins/radiantweb/problog/models/tag/fields.yaml
+form: ~/plugins/radiantweb/problog/models/tag/fields.yaml
 model-class: Radiantweb\Problog\Models\Tag
 default-redirect: radiantweb/problog/tags
 

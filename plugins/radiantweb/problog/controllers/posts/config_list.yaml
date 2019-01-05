@@ -3,7 +3,7 @@
 # ===================================
 
 # Model List Column configuration
-list: ./plugins/radiantweb/problog/models/post/columns.yaml
+list: ~/plugins/radiantweb/problog/models/post/columns.yaml
 
 # Model Class name
 modelClass: Radiantweb\Problog\Models\Post

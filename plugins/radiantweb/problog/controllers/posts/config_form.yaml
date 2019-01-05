@@ -3,7 +3,7 @@
 # ===================================
 
 name: Blog Post
-form: ./plugins/radiantweb/problog/models/post/fields.yaml
+form: ~/plugins/radiantweb/problog/models/post/fields.yaml
 modelClass: Radiantweb\Problog\Models\Post
 defaultRedirect: radiantweb/problog/posts
 

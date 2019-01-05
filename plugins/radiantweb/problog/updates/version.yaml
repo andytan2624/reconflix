@@ -131,3 +131,5 @@
 5.1.1:
     - bad tag/cat url 404 improvemnt
     - markdown saving correction
+5.1.2:
+    - correct routing prefix for public folder use

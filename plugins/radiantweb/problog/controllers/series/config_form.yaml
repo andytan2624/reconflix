@@ -6,7 +6,7 @@
 name: Series
 
 # Model Form Field configuration
-form: $/radiantweb/problog/models/series/fields.yaml
+form: ~/plugins/radiantweb/problog/models/series/fields.yaml
 
 # Model Class name
 modelClass: Radiantweb\Problog\Models\Series

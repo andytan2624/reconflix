@@ -143,8 +143,8 @@ yarn.lock
 /config/database.php
 /storage/*.key
 /vendor
-/modules
-#/config
+/modules/**/*
+/config
 /bootstrap
 /themes/demo
 /themes/*/content
