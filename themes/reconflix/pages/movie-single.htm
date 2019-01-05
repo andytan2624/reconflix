@@ -48,7 +48,7 @@ ddd
 
     <h3>Genres</h3>
     {% for genre in movie.genres %}
-        <a href="/reconflix/genres/{{ genre.genre_title }}">{{ genre.genre_title }}</a> <br/>
+        <a href="/genres/{{ genre.genre_title }}">{{ genre.genre_title }}</a> <br/>
     {% endfor %}
 
 {% else %}

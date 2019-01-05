@@ -19,7 +19,7 @@ notFoundMessage = "Record not found"
 
     <h3>Genres</h3>
     {% for movie in record.movies %}
-        <a href="/reconflix/movie/{{ movie.slug }}">{{ movie.name }}</a> <br/>
+        <a href="/movie/{{ movie.slug }}">{{ movie.name }}</a> <br/>
     {% endfor %}
 {% else %}
     {{ notFoundMessage }}
